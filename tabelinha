@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#a9005c">
+<title>Brenda</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 22px;
+  display: grid;
+  place-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #28131f;
+  background:
+    radial-gradient(ellipse at 18% 8%, rgba(255,65,157,.46), transparent 34%),
+    radial-gradient(ellipse at 88% 88%, rgba(174,0,91,.38), transparent 36%),
+    linear-gradient(155deg, #a9005c 0%, #690039 48%, #31001e 100%);
+}
+
+.wrap {
+  width: min(100%, 430px);
+}
+
+.brand {
+  margin: 0 auto 20px;
+  text-align: center;
+  color: white;
+}
+
+.avatar {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 12px;
+  display: grid;
+  place-items: center;
+  border: 2px solid rgba(255,255,255,.7);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ff82b9, #c60068 70%);
+  box-shadow: 0 8px 25px rgba(20,0,13,.22);
+  color: white;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.brand-name {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: .8px;
+}
+
+.brand-line {
+  margin: 7px 0 0;
+  color: rgba(255,255,255,.8);
+  font-size: 14px;
+}
+
+.card {
+  padding: 29px 23px 23px;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 23px;
+  background: linear-gradient(145deg, #ffe0e8 0%, #ffcbd9 100%);
+  box-shadow: 0 20px 55px rgba(20,0,13,.27);
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  color: #321323;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -.5px;
+}
+
+.description {
+  margin: 11px 0 22px;
+  color: #795565;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.confirm {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 14px;
+  border: 1px solid rgba(153,0,76,.23);
+  border-radius: 14px;
+  background: rgba(255,255,255,.63);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.confirm:has(input:checked) {
+  border-color: #bd176b;
+  box-shadow: 0 0 0 3px rgba(189,23,107,.10);
+}
+
+.confirm input {
+  appearance: none;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  border: 2px solid #b58b9d;
+  border-radius: 6px;
+  background: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.confirm input:checked {
+  border-color: #a9005c;
+  background: linear-gradient(135deg, #ed4b99, #a9005c);
+}
+
+.confirm input:checked::after {
+  content: "✓";
+  position: absolute;
+  inset: -1px 0 0;
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.confirm strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #351525;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.confirm small {
+  display: block;
+  color: #8a6d7b;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.submit {
+  width: 100%;
+  min-height: 54px;
+  margin-top: 15px;
+  border: 0;
+  border-radius: 13px;
+  color: white;
+  background: linear-gradient(105deg, #f34b9b 0%, #cf176f 52%, #850044 100%);
+  box-shadow: 0 9px 20px rgba(145,0,72,.23);
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .18s, opacity .18s;
+}
+
+.submit:disabled {
+  opacity: .48;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.submit:not(:disabled):active {
+  transform: translateY(1px) scale(.99);
+}
+
+.status {
+  margin: 13px 0 0;
+  color: #9d0759;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+@media (max-width: 380px) {
+  body {
+    padding: 17px;
+  }
+
+  .card {
+    padding: 25px 18px 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="wrap">
+
+  <header class="brand">
+    <div class="avatar">B</div>
+
+    <p class="brand-name">BRENDA 🔥</p>
+
+    <p class="brand-line">
+      Meu cantinho especial 💗
+    </p>
+  </header>
+
+  <section class="card">
+
+    <h1>Tudo pronto?</h1>
+
+    <p class="description">
+      Confirme para continuar.
+    </p>
+
+    <label class="confirm" for="confirmar">
+
+      <input id="confirmar" type="checkbox">
+
+      <span>
+        <strong>Confirmar e continuar</strong>
+        <small>Toque no quadradinho para prosseguir</small>
+      </span>
+
+    </label>
+
+    <button
+      class="submit"
+      id="continuar"
+      type="button"
+      disabled>
+      Continuar
+    </button>
+
+    <p class="status" id="status"
+       role="status" aria-live="polite" hidden>
+      ✨ Confirmação concluída. Abrindo a próxima página...
+    </p>
+
+  </section>
+
+</main>
+
+<script>
+const checkbox = document.getElementById('confirmar');
+const button = document.getElementById('continuar');
+const status = document.getElementById('status');
+
+const destination = 'https://www.crownbot.com.br/brenda';
+
+checkbox.addEventListener('change', () => {
+  button.disabled = !checkbox.checked;
+});
+
+button.addEventListener('click', () => {
+
+  if (!checkbox.checked) return;
+
+  button.disabled = true;
+  button.textContent = 'Abrindo...';
+
+  status.hidden = false;
+
+  window.setTimeout(() => {
+    window.location.href = destination;
+  }, 700);
+
+});
+</script>
+
+</body>
+  </html>
+
